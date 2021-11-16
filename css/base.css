@@ -1,0 +1,40 @@
+.quizy {
+    float: right;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.quiz a:visited, .quiz a {
+    width: 170px;
+    padding: 10px;
+    font-size: 60px;
+    display: flex;
+    align-content: center;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--color-seccondary);
+    border-radius: 20px;
+    margin: 10px;
+    justify-content: center;
+}
+
+.scoreboard {
+    margin: 20px;
+    min-width: 250px;
+    width: calc(100% - 290px);
+    float: left;
+    padding: 20px;
+    border: 2px solid var(--color-seccondary);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.scoreboard h3 {
+    text-transform: uppercase;
+}
+.scoreboard .scoreboard-table table th {
+    text-transform: uppercase;
+}
