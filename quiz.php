@@ -21,6 +21,7 @@ switch($_GET['type']){
         $query = 'SELECT * FROM ee09';
         break;
 }
+
 include('php/dbc.php');
 $response = mysqli_query($dbc, $query);
 $number_of_questions = mysqli_num_rows($response);

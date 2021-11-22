@@ -1,0 +1,6 @@
+function fun1(f)
+{
+if(f < 0)
+f = f * (-1);
+return f;
+}
