@@ -1,0 +1,13 @@
+.pytanieMain {
+    margin: 16px;
+    border: solid 5px white;
+    border-radius: 20px;
+    width: 80%;
+    min-width: 700px
+}
+.pytanieMain div {
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 16px;
+    margin 10px;
+}

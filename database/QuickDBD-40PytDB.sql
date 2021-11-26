@@ -4,7 +4,15 @@
 
 
 CREATE TABLE `e12` (
+<<<<<<< Updated upstream
     `id` int  NOT NULL ,
+=======
+    `id` int AUTO_INCREMENT NOT NULL ,
+    `id_arkusza` int  NOT NULL ,
+    `nr_pytania` int  NOT NULL ,
+    -- np snippet kodu do pytania
+    `prepytanie` text  NULL ,
+>>>>>>> Stashed changes
     `pytanie` text  NOT NULL ,
     `odp1` text  NOT NULL ,
     `odp2` text  NOT NULL ,
@@ -18,7 +26,15 @@ CREATE TABLE `e12` (
 );
 
 CREATE TABLE `e13` (
+<<<<<<< Updated upstream
     `id` int  NOT NULL ,
+=======
+    `id` int AUTO_INCREMENT NOT NULL ,
+    `id_arkusza` int  NOT NULL ,
+    `nr_pytania` int  NOT NULL ,
+    -- np snippet kodu do pytania
+    `prepytanie` text  NULL ,
+>>>>>>> Stashed changes
     `pytanie` text  NOT NULL ,
     `odp1` text  NOT NULL ,
     `odp2` text  NOT NULL ,
@@ -32,7 +48,15 @@ CREATE TABLE `e13` (
 );
 
 CREATE TABLE `e14` (
+<<<<<<< Updated upstream
     `id` int  NOT NULL ,
+=======
+    `id` int AUTO_INCREMENT NOT NULL ,
+    `id_arkusza` int  NOT NULL ,
+    `nr_pytania` int  NOT NULL ,
+    -- np snippet kodu do pytania
+    `prepytanie` text  NULL ,
+>>>>>>> Stashed changes
     `pytanie` text  NOT NULL ,
     `odp1` text  NOT NULL ,
     `odp2` text  NOT NULL ,
@@ -46,7 +70,15 @@ CREATE TABLE `e14` (
 );
 
 CREATE TABLE `ee08` (
+<<<<<<< Updated upstream
     `id` int  NOT NULL ,
+=======
+    `id` int AUTO_INCREMENT NOT NULL ,
+    `id_arkusza` int  NOT NULL ,
+    `nr_pytania` int  NOT NULL ,
+    -- np snippet kodu do pytania
+    `prepytanie` text  NULL ,
+>>>>>>> Stashed changes
     `pytanie` text  NOT NULL ,
     `odp1` text  NOT NULL ,
     `odp2` text  NOT NULL ,
@@ -60,7 +92,15 @@ CREATE TABLE `ee08` (
 );
 
 CREATE TABLE `ee09` (
+<<<<<<< Updated upstream
     `id` int  NOT NULL ,
+=======
+    `id` int AUTO_INCREMENT NOT NULL ,
+    `id_arkusza` int  NOT NULL ,
+    `nr_pytania` int  NOT NULL ,
+    -- np snippet kodu do pytania
+    `prepytanie` text  NULL ,
+>>>>>>> Stashed changes
     `pytanie` text  NOT NULL ,
     `odp1` text  NOT NULL ,
     `odp2` text  NOT NULL ,
