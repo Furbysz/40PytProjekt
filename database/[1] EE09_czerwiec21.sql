@@ -28,7 +28,7 @@ files
 'Wypisz n', #odp2
 'n ← n + 5', #odp3
 'Wykonaj podprogram sortowania tablicy t', #odp4
-'', #poprawna
+'1', #poprawna
 'img', #Qtype
 'text', #Atype
 1   #files
@@ -43,7 +43,7 @@ następuje sortowanie, po czym posortowane zawartości przedziałów są poddawa
 'Sortowanie kubełkowe.', #odp2
 'Sortowanie bąbelkowe.', #odp3
 'Sortowanie przez wybór.', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -58,7 +58,7 @@ Warunek wybierania ocen w pętli liczącej średnią powinien zawierać wyrażen
 '$ocena > 2 and $ocena < 6', #odp2
 '$ocena >= 2 or $ocena <= 6', #odp3
 '$ocena >= 2 and $ocena <= 6', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -90,7 +90,7 @@ else
 else
  $liczba = 0;
 ', #odp4
-'', #poprawna
+'2', #poprawna
 'code', #Qtype
 'code', #Atype
 0   #files
@@ -110,7 +110,7 @@ else
 'Ma dwa pola i jedną metodę, pole kolor ma zakres widzialności ograniczony tylko do metod klasy.', #odp2
 'Ma dwa pola i jedną metodę, pole nazwa ma zakres widzialności ograniczony tylko do metod klasy.', #odp3
 'Ma dwa pola i jeden konstruktor, oba pola mają zakres widzialności ograniczony tylko do metod klasy.', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -125,7 +125,7 @@ ze składnią języka?', #pyt
 'zm1 == 0x35;', #odp2
 'zm1[2] = 32;', #odp3
 'zm1 = "wiadro";', #odp4
-'', #poprawna
+'1', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -140,7 +140,7 @@ indeksami należy użyć metody', #pyt
 'slice()', #odp2
 'concat()', #odp3
 'replace()', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -155,7 +155,7 @@ jednego dnia?', #pyt
 'setcookie("dane", "dane", 0);', #odp2
 'setcookie("dane", $dane, time());', #odp3
 'setcookie("dane", $dane, time() + (3600*24)); ', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -171,7 +171,7 @@ $nameErr = "Name is required";
 'ciasteczek.', #odp2
 'formularza.', #odp3
 'bazy danych.', #odp4
-'', #poprawna
+'3', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -185,7 +185,7 @@ $nameErr = "Name is required";
 'dzień.', #odp2
 'miesiąc i rok.', #odp3
 'dzień i miesiąc.', #odp4
-'', #poprawna
+'1', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -199,7 +199,7 @@ $nameErr = "Name is required";
 '//', #odp2
 '/* */', #odp3
 '<!-- -->', #odp4
-'', #poprawna
+'3', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -213,7 +213,7 @@ $nameErr = "Name is required";
 '1..n', #odp2
 'n..1', #odp3
 'n..m', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -229,7 +229,7 @@ $nameErr = "Name is required";
 'każdy klucz główny będzie miał odpowiadający mu klucz obcy w innej tabeli.', #odp4
 'text', #poprawna
 'text', #Qtype
-'', #Atype
+'3', #Atype
 0   #files
 ),
 (#14
@@ -241,7 +241,7 @@ $nameErr = "Name is required";
 'INSERT INTO', #odp2
 'ALTER TABLE', #odp3
 'CREATE TABLE', #odp4
-'', #poprawna
+'3', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -255,7 +255,7 @@ $nameErr = "Name is required";
 'wskazać najwyższą cenę za usługi.', #odp2
 'policzyć ile jest usług dostępnych w tabeli.', #odp3
 'obliczyć średnią arytmetyczną cen wszystkich usług.', #odp4
-'', #poprawna
+'4', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -269,7 +269,7 @@ $nameErr = "Name is required";
 'Rafał, Rebeka, Renata, Roksana', #odp2
 'Gerald, Jarosław, Marek, Tamara.', #odp3
 'Arleta, Krzysztof, Krystyna, Tristan.', #odp4
-'', #poprawna
+'4', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -283,7 +283,7 @@ $nameErr = "Name is required";
 'występujące w bazie tylko raz', #odp2
 'posortowane malejąco lub rosnąco.', #odp3
 'tak, aby w podanej kolumnie nie powtarzały się wartości. ', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -297,7 +297,7 @@ $nameErr = "Name is required";
 'YEAR', #odp2
 'BOOLEAN', #odp3
 'TIMESTAMP', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -316,7 +316,7 @@ Zgloszenia.id WHERE Zgloszenia.id = 5;', #odp2
 Zgloszenia.Klienci_id WHERE Klienci.id = 5;', #odp3
 'SELECT opis, nazwisko FROM Zgloszenia JOIN Klienci ON Klienci.id =
 Zgloszenia.Klienci_id WHERE Zgloszenia.id = 5;', #odp4
-'', #poprawna
+'4', #poprawna
 'img', #Qtype
 'code', #Atype
 1   #files
@@ -330,7 +330,7 @@ Zgloszenia.Klienci_id WHERE Zgloszenia.id = 5;', #odp4
 'formularzem.', #odp2
 'filtrowaniem.', #odp3
 'kwerendą SELECT.', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -344,7 +344,7 @@ Zgloszenia.Klienci_id WHERE Zgloszenia.id = 5;', #odp4
 'ALTER COLUMN', #odp2
 'CREATE COLUMN', #odp3
 'TRUNCATE TABLE', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -358,7 +358,7 @@ Zgloszenia.Klienci_id WHERE Zgloszenia.id = 5;', #odp4
 'zmienić typ na float dla kolumny cena.', #odp2
 'zmienić nazwę kolumny z cena na float.', #odp3
 'dodać kolumnę cena o typie float, jeśli nie istnieje.', #odp4
-'', #poprawna
+'2', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -373,7 +373,7 @@ w przypadku, gdy już istnieje, można posłużyć się składnią', #pyt
 "CREATE USER OR DROP 'anna'@'localhost' IDENTIFIED BY 'yu&T%';", #odp2
 "CREATE OR REPLACE USER 'anna'@'localhost' IDENTIFIED BY 'yu&T%';", #odp3
 "CREATE USER IF NOT EXISTS 'anna'@'localhost' IDENTIFIED BY 'yu&T%';", #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -388,7 +388,7 @@ jedynie do', #pyt
 'wybierania, dodawania pól oraz zmiany struktury tabeli o nazwie klienci.', #odp2
 'wybierania, wstawiania oraz aktualizacji danych wszystkich tabel w bazie o nazwie klienci.', #odp3
 'wybierania, dodawania pól oraz zmiany struktury wszystkich tabel w bazie o nazwie klienci.', #odp4
-'', #poprawna
+'1', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -402,7 +402,7 @@ jedynie do', #pyt
 'otrzymania kodu błędu, gdy proces wstawiania wiersza się nie powiódł.', #odp2
 'pobrania najwyższego indeksu bazy, aby po jego inkrementacji wstawić pod niego dane', #odp3
 'pobrania pierwszego wolnego indeksu bazy, tak, aby można było pod nim wstawić nowe dane.', #odp4
-'', #poprawna
+'1', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -458,7 +458,7 @@ width: 30%; }
  #piaty {
  float: right;
  width: 30%; }', #odp4
-'', #poprawna
+'2', #poprawna
 'img', #Qtype
 'code', #Atype
 1   #files
@@ -473,7 +473,7 @@ są odpowiednikami znaczników', #pyt
 '<u> oraz <sup>', #odp2
 '<b> oraz <i>', #odp3
 '<b> oraz <u> ', #odp4
-'', #poprawna
+'3', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -488,7 +488,7 @@ zakładając, że w drugie pole użytkownik wpisał wartość „ala ma kota”?
 'Efekt 2.', #odp2
 'Efekt 3.', #odp3
 'Efekt 4.', #odp4
-'', #poprawna
+'2', #poprawna
 'img', #Qtype
 'text', #Atype
 1   #files
@@ -502,7 +502,7 @@ zakładając, że w drugie pole użytkownik wpisał wartość „ala ma kota”?
 '<script src="skrypt.js"></script>', #odp2
 '<link rel="script" href="skrypt.js" />', #odp3
 '<link rel="JavaScript" type="js" href="skrypt.js" />', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -517,7 +517,7 @@ w poziomie. Którą definicję należy przypisać selektorowi body?', #pyt
 '{background-image: url("rys.png"); background-repeat: repeat;}', #odp2
 '{background-image: url("rys.png"); background-repeat: repeat-x;}', #odp3
 '{background-image: url("rys.png"); background-repeat: repeat-y;}', #odp4
-'', #poprawna
+'3', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -532,7 +532,7 @@ paragrafu przyjmują wartości domyślne?', #pyt
 'Efekt 2.', #odp2
 'Efekt 3.', #odp3
 'Efekt 4.', #odp4
-'', #poprawna
+'3', #poprawna
 'img', #Qtype
 'text', #Atype
 1   #files
@@ -547,7 +547,7 @@ sformatowany', #pyt
 'każdy tekst w znaczniku <p> za wyjątkiem tych w znaczniku <i>', #odp2
 'jedynie ten tekst znacznika <p>, do którego jest przypisana klasa o nazwie i', #odp3
 'jedynie ten tekst w znaczniku <i>, który jest umieszczony bezpośrednio wewnątrz znacznika <p>', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -562,7 +562,7 @@ jasnozielone tło', #pyt
 'gdy zostanie wskazane kursorem myszy bez kliknięcia.', #odp2
 'po kliknięciu myszą w celu zapisania w nim tekstu.', #odp3
 'w każdym przypadku.', #odp4
-'', #poprawna
+'3', #poprawna
 'code', #Qtype
 'text', #Atype
 0   #files
@@ -577,7 +577,7 @@ w którym należy zapisać taki plik.', #pyt
 'PNG', #odp2
 'BMP', #odp3
 'JPEG', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -592,7 +592,7 @@ na przedstawionym obrazie. Ma to na celu ', #pyt
 'przyciemnienie całości obrazu.', #odp2
 'wygładzenie krawędzi na obrazie.', #odp3
 'modyfikację najjaśniejszych i najciemniejszych kolorów obrazu.', #odp4
-'', #poprawna
+'4', #poprawna
 'img', #Qtype
 'text', #Atype
 1   #files
@@ -606,7 +606,7 @@ na przedstawionym obrazie. Ma to na celu ', #pyt
 '#EE0000', #odp2
 '#00EE00', #odp3
 '#EE00EE', #odp4
-'', #poprawna
+'1', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -620,7 +620,7 @@ na przedstawionym obrazie. Ma to na celu ', #pyt
 'Ogg, QuickTime', #odp2
 'Ogg, AVI, MPEG', #odp3
 'MP4, Ogg, WebM', #odp4
-'', #poprawna
+'4', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
@@ -635,7 +635,7 @@ systemie operacyjnym serwera, wartości przedefiniowanych zmiennych?', #pyt
 'phpcredits();', #odp2
 'echo phpversion();', #odp3
 'print_r(ini_get_all());', #odp4
-'', #poprawna
+'1', #poprawna
 'text', #Qtype
 'code', #Atype
 0   #files
@@ -649,7 +649,7 @@ systemie operacyjnym serwera, wartości przedefiniowanych zmiennych?', #pyt
 'zamienić obraz1.gif na obraz2.gif', #odp2
 'zmienić styl obrazu o id równym i1', #odp3
 'wyświetlić obraz2.gif obok obraz1.gif', #odp4
-'', #poprawna
+'2', #poprawna
 'img', #Qtype
 'text', #Atype
 1   #files
@@ -663,7 +663,7 @@ systemie operacyjnym serwera, wartości przedefiniowanych zmiennych?', #pyt
 '<title>', #odp2
 'przynajmniej jednego <h1>', #odp3
 '<meta name="author" content="....">', #odp4
-'', #poprawna
+'2', #poprawna
 'text', #Qtype
 'text', #Atype
 0   #files
