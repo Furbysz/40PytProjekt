@@ -4,8 +4,8 @@ if(!isset($_GET['type'])){
     header('Location: '.$actual_link);
 }
 
-
-
+$ile_pytan_wariacie = 5;
+    
 switch($_GET['type']){
     case 'e12':
         $query = 'SELECT * FROM e12';
@@ -32,7 +32,7 @@ $all_pyt = mysqli_fetch_all($response, MYSQLI_ASSOC);
 $los_pytania = array();
 $bigOTest = 0; // Test ile razy pętla się powtarza zanim wylosuje wszystkie odpowiedzi
 
-for($i = 0; $i < 40; $i++){
+for($i = 0; $i < $ile_pytan_wariacie; $i++){
     //$bigOTest++;
     
     $nr_pyt = rand(0, $number_of_questions-1);
@@ -72,11 +72,18 @@ echo "<pre>";
     <link rel="stylesheet" href="css/zero.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/Correcty'n'Wrong.css">
 </head>
 <body>
        <div class="pytania">
+       <!-- onsubmit="sendAnswers()" -->
+       <form class="quiz" method="post" action="php/checkAnswers.php">
+       
 <?php
-for($i = 0; $i < 40; $i++){
+    echo '<input type="hidden" name="ile_pytan" value="'.$ile_pytan_wariacie.'">';
+    echo '<input type="hidden" name="kwali" value="'.$_GET['type'].'">';
+        
+for($i = 0; $i < $ile_pytan_wariacie; $i++){
     $pytanie = $all_pyt[$los_pytania[$i]];
     //#########
     $wczytano = 0;
@@ -93,8 +100,9 @@ for($i = 0; $i < 40; $i++){
             
         }
     }
-    if($wczytano != $pytanie['files']){echo "<script>alert(`BŁĄD ŁADOWANIA, ODŚWIERZ STRONĘ BĄDZ SKONTAKTUJ SIĘ Z ADMINISTRATOREM: code-id".$pytanie['id'].'-ark'.$pytanie['id_arkusza'].'-nr'.$pytanie['nr_pytania']."`)</script>";}
-    
+    if($wczytano != $pytanie['files'])  {
+        echo "<script>alert(`BŁĄD ŁADOWANIA, ODŚWIERZ STRONĘ BĄDZ SKONTAKTUJ SIĘ Z ADMINISTRATOREM: code-id".$pytanie['id'].'-ark'.$pytanie['id_arkusza'].'-nr'.$pytanie['nr_pytania']."`)</script>";
+    }   
     if($pytanie['Qtype'] == 'text') {
         $prepytanie = $pytanie['prepytanie'];
     }
@@ -121,8 +129,8 @@ for($i = 0; $i < 40; $i++){
         $odp4 = '<pre>'.htmlentities($pytanie['odp4']).'</pre>';
     }
     //#########
-echo '<div class="pytanieMain">';
-    //echo '<div class="data"></div>';
+    echo '<div class="pytanieMain">';
+    //#########
     if(!empty($prepytanie)){
     echo '<div class="prepyt">';
         echo $prepytanie;
@@ -132,16 +140,19 @@ echo '<div class="pytanieMain">';
         echo $pytanie['pytanie'];
     echo '</div>';
     echo '<div class="odpowiedzi">';
-        echo '<label><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="1">'.$odp1.'</label><br>';
-        echo '<label><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="2">'.$odp2.'</label><br>';
-        echo '<label><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="3">'.$odp3.'</label><br>';
-        echo '<label><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="4">'.$odp4.'</label><br>';
+        echo '<label><input class="answerRadio" type="radio" name="Q_'.$i.'" value="1">'.$odp1.'</label><br>';
+        echo '<label><input class="answerRadio" type="radio" name="Q_'.$i.'" value="2">'.$odp2.'</label><br>';
+        echo '<label><input class="answerRadio" type="radio" name="Q_'.$i.'" value="3">'.$odp3.'</label><br>';
+        echo '<label><input class="answerRadio" type="radio" name="Q_'.$i.'" value="4">'.$odp4.'</label><br>';
+    
+    echo '<input type="hidden" name="id_pyt_'.$i.'" value="'.$pytanie['id'].'">';
     echo '</div>';
     echo '</div>';
-echo '</div>';
 
 }
 ?>
+ <button type="submit"> Zakończ quiz </button>
+  </form>
    </div>    
 </body>
 </html>

@@ -41,7 +41,7 @@ $pytanie = $all_pyt[rand(0, $number_of_questions)];
     <link rel="stylesheet" href="css/zero.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/quiz.css">
-    <link rel="stylesheet" href="css/GaB.css">
+    <link rel="stylesheet" href="css/Correcty'n'Wrong.css">
 </head>
 <body>
     <div class="pytanieMain">

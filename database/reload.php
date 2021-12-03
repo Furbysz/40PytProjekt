@@ -27,7 +27,10 @@ foreach($dir as $plik){
     if($plik == 'reload.php'){continue;}
     if($plik == '.' OR $plik == '..'){continue;}
     if(str_starts_with($plik, '[TEAMPLATE]')){continue;}
-    if(str_starts_with($plik, '[MASTER]')){$master = file_get_contents($plik); continue;}
+    if(str_starts_with($plik, '[MASTER]'))
+    {
+        $master = file_get_contents($plik); continue;
+    }
     
     $pliki[$j] = $plik;
     $kwerendy[$j] = file_get_contents($plik);
@@ -53,7 +56,7 @@ if(mysqli_select_db($dbc, 'pytania')){
     echo '<b>BŁĄD ŁĄCZENIA Z NOWĄ BAZĄ</b><br>';
 }
 //MASTER
-if(mysqli_query($dbc, $master)){
+if(mysqli_multi_query($dbc, $master)){
     echo '<b>master.sql wykonane</b><br>';
 } else {
     echo '<b>BŁĄD wykonania master.sql</b><br>';
@@ -72,7 +75,7 @@ if(mysqli_query($dbc, $master)){
 
 $ile_plikow = count($kwerendy);
 for($i = 0; $i < $ile_plikow; $i++){
-    echo '<br><b>'.$pliki[$i].'</b><br>';
+    //echo '<br><b>'.$pliki[$i].'</b><br>';
     if(mysqli_multi_query($dbc, $kwerendy[$i])){
         echo '<b>wykonano kwerende '.$i.'</b><br>';
     } else {
@@ -85,7 +88,7 @@ for($i = 0; $i < $ile_plikow; $i++){
     print_r($pliki[$i]);
     echo '<br>-------------------------------------------------------------------<br>';
 */
-    print_r($kwerendy[$i]);
+   //print_r($kwerendy[$i]);
     echo '</pre>';
     
 }
