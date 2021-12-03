@@ -378,7 +378,7 @@ rysunku?', #pyt
 'netstat', #odp3
 'ipconfig', #odp4
 '3', #poprawna
-'img', #Qtype
+'text', #Qtype
 'text', #Atype
 0   #files
 ),
@@ -422,8 +422,8 @@ stacjom roboczym Windows, to', #pyt
 'Postfix', #odp4
 '3', #poprawna
 'text', #Qtype
-'code', #Atype
-1   #files
+'text', #Atype
+0   #files
 ),
 (#29
 3,  #id Arkusza
@@ -451,7 +451,7 @@ stacjom roboczym Windows, to', #pyt
 '2', #poprawna
 'text', #Qtype
 'text', #Atype
-1   #files
+0   #files
 ),
 (#31
 3,  #id Arkusza

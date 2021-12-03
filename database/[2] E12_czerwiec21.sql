@@ -222,7 +222,7 @@ Która z wersji modernizacji komputera nie przyniesie wzrostu wydajności?', #py
 '2', #poprawna
 'img', #Qtype
 'text', #Atype
-0   #files
+1   #files
 ),
 (#15
 2,  #id Arkusza
@@ -354,7 +354,7 @@ wyłączyć reklamy, jest rozpowszechniane na licencji', #pyt
 '4', #poprawna
 'text', #Qtype
 'text', #Atype
-1   #files
+0   #files
 ),
 (#24
 2,  #id Arkusza
@@ -545,7 +545,7 @@ spowodowana uszkodzeniem', #pyt
 '1', #poprawna
 'text', #Qtype
 'text', #Atype
-1   #files
+0   #files
 ),
 (#37
 2,  #id Arkusza
