@@ -1,5 +1,15 @@
+
 <?php
-include('../php/dbc.php');
+
+/*
+
+$text=iconv("UTF-8", "ISO-8859-1//IGNORE", $text);
+mysqli_multi_query($dbc, $kwerendy[$i])
+
+*/
+
+// \/ Comment to disable
+//include('../php/dbc.php');
 
 $dir = scandir(__DIR__);
 /*
@@ -34,7 +44,7 @@ foreach($dir as $plik){
 $ile_plikow = count($kwerendy);
 for($i = 0; $i < $ile_plikow; $i++){
     echo '<br><b>'.$pliki[$i].'</b><br>';
-    if(mysqli_query($dbc, $kwerendy[$i])){
+    if(mysqli_multi_query($dbc, $kwerendy[$i])){
         echo '<b>wykonano kwerende '.$i.'</b><br>';
     } else {
         echo '<b>BŁĄD kwerendy '.$i.'</b><br>';

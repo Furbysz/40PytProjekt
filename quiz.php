@@ -86,14 +86,14 @@ for($i = 0; $i < 40; $i++){
         $dir_contents = scandir($dir);
         foreach($dir_contents as $content){
             if(is_dir($content)){continue;}
-            if(str_starts_with($content, 'Question')){
+            if(str_starts_with($content, $pytanie['id_arkusza'].'_Q_')){
                 $wczytano ++;
                 $prepytanie = $prepytanie.'<img alt="obrazek do pytania nr '.$pytanie['id'].'" src="'.$dir.'/'.$content.'">';
             }
             
         }
     }
-    if($wczytano != $pytanie['files']){echo "<script>alert(`BŁĄD ŁADOWANIA, ODŚWIERZ STRONĘ BĄDZ SKONTAKTUJ SIĘ Z ADMINISTRATOREM: code-".$pytanie['id'].'-'.$pytanie['id_arkusza'].'-'.$pytanie['nr_pytania']."`)</script>";}
+    if($wczytano != $pytanie['files']){echo "<script>alert(`BŁĄD ŁADOWANIA, ODŚWIERZ STRONĘ BĄDZ SKONTAKTUJ SIĘ Z ADMINISTRATOREM: code-id".$pytanie['id'].'-ark'.$pytanie['id_arkusza'].'-nr'.$pytanie['nr_pytania']."`)</script>";}
     
     if($pytanie['Qtype'] == 'text') {
         $prepytanie = $pytanie['prepytanie'];
