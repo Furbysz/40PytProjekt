@@ -4,3 +4,9 @@
 .wrong {
     background-color: darkred;
 }
+.correct > pre {
+    background-color: green;
+}
+.wrong > pre {
+    background-color: darkred;
+}
