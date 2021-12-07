@@ -87,11 +87,14 @@ for($j = 0; $j < $ile_pyt; $j++)
     echo '<div class="pytanieMain">';
     //#########
     $klasaOdp1 = null; $klasaOdp2 = null; $klasaOdp3 = null; $klasaOdp4 = null;
+    if($odpowiedz != null)
+    {
     if($pytanie['poprawna'] == 1){$klasaOdp1 = 'correct';} if($odpowiedz != $pytanie['poprawna'] AND $odpowiedz == 1){$klasaOdp1 = 'wrong';}
     if($pytanie['poprawna'] == 2){$klasaOdp2 = 'correct';} if($odpowiedz != $pytanie['poprawna'] AND $odpowiedz == 2){$klasaOdp2 = 'wrong';}
     if($pytanie['poprawna'] == 3){$klasaOdp3 = 'correct';} if($odpowiedz != $pytanie['poprawna'] AND $odpowiedz == 3){$klasaOdp3 = 'wrong';}
     if($pytanie['poprawna'] == 4){$klasaOdp4 = 'correct';} if($odpowiedz != $pytanie['poprawna'] AND $odpowiedz == 4){$klasaOdp4 = 'wrong';}
-    if($odpowiedz == $pytanie['poprawna']){$poprawnieUdzieloneOdp++;}
+    if($odpowiedz == $pytanie['poprawna']){$poprawnieUdzieloneOdp++;}  
+    }
     //#########
     if(!empty($prepytanie)){
     echo '<div class="prepyt">';
