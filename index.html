@@ -24,8 +24,9 @@
 -->
 <div class="wybor-quizu">
    <h3>Wybież quiz</h3>
-    <form>
+    <form method="post" action="php/crossroad.php">
         <div class="select">
+        <input type="hidden" name="destination" value="quiz">
         <select name="kwali">
             <option value disabled selected>kwalifikacja</option>
             <option value="e12">E12</option>
@@ -43,6 +44,8 @@
             <option value="multi">Quiz 40 pytań</option>
         </select>
         </div>
+        <br>
+        <input type="submit">
     </form>
 </div>
 <!--

@@ -4,8 +4,6 @@ if(!isset($_GET['type'])){
     header('Location: '.$actual_link);
 }
 
-
-
 switch($_GET['type']){
     case 'e12':
         $query = 'SELECT * FROM e12';
@@ -28,12 +26,12 @@ include('php/dbc.php');
 $response = mysqli_query($dbc, $query);
 $number_of_questions = mysqli_num_rows($response);
 $all_pyt = mysqli_fetch_all($response, MYSQLI_ASSOC);
-$pytanie = $all_pyt[rand(0, $number_of_questions)];
+$pytanie = $all_pyt[rand(0, $number_of_questions-1)];
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>pojedyńcze pytanie <?php echo $_GET['type']?></title>
@@ -44,8 +42,54 @@ $pytanie = $all_pyt[rand(0, $number_of_questions)];
     <link rel="stylesheet" href="css/Correcty'n'Wrong.css">
 </head>
 <body>
-    <div class="pytanieMain">
-        <?php
+<script>
+    const labels = document.querySelectorAll(`label`);
+    const answer = document.querySelector(`empty.data`).dataset.answer;
+    const correct = document.querySelector(`label.ans`+answer);
+        
+    function checkAns()
+        {
+            const selected = document.querySelector(`input.answerRadio:checked`).value;
+            if(selected != 1 OR selected != 2 OR selected != 3 OR selected != 4){return 0;}
+            console.log(selected);
+        }
+    /*  
+    labels.forEach(addEventListener(`click`, e => {
+        if(e == correct){
+            e.classList.add(`correct`);
+        } else {
+            e.classList.add(`wrong`);
+            correct.classList.add(`correct`);
+        }
+    }))
+    */
+</script>
+<div class="pytanieMain">
+<?php
+    $wczytano = 0;
+    $prepytanie = null;
+    if($pytanie['Qtype'] == 'img')  {
+        $dir = './question-files/'.$pytanie['id_arkusza'].'/'.$pytanie['nr_pytania'].'/';
+        $dir_contents = scandir($dir);
+        foreach($dir_contents as $content){
+            if(is_dir($content)){continue;}
+            if(str_starts_with($content, $pytanie['id_arkusza'].'_Q_')){
+                $wczytano ++;
+                $prepytanie = $prepytanie.'<img alt="obrazek do pytania nr '.$pytanie['id'].'" src="'.$dir.'/'.$content.'">';
+            }
+            
+        }
+    }
+    if($wczytano != $pytanie['files'])  {
+        echo "<script>alert(`BŁĄD ŁADOWANIA, ODŚWIERZ STRONĘ BĄDZ SKONTAKTUJ SIĘ Z ADMINISTRATOREM: code-id".$pytanie['id'].'-ark'.$pytanie['id_arkusza'].'-nr'.$pytanie['nr_pytania']."`)</script>";
+    }   
+    if($pytanie['Qtype'] == 'text') {
+        $prepytanie = $pytanie['prepytanie'];
+    }
+    if($pytanie['Qtype'] == 'code') {
+        $prepytanie = '<pre>'.htmlentities($pytanie['prepytanie']).'</pre>';
+    }
+    //##########
     if($pytanie['Atype'] == 'img')  {
         $odp1 = '<img src="/question-files/'.$pytanie['id_arkusza'].'/'.$pytanie['nr_pytania'].'/Ans1" />';
         $odp2 = '<img src="/question-files/'.$pytanie['id_arkusza'].'/'.$pytanie['nr_pytania'].'/Ans2" />';
@@ -65,8 +109,7 @@ $pytanie = $all_pyt[rand(0, $number_of_questions)];
         $odp4 = '<pre>'.htmlentities($pytanie['odp4']).'</pre>';
     }
     //#########
-echo '<div class="pytanieMain">';
-    //echo '<div class="data"></div>';
+    echo '<div class="data" hidden></div>';
     if(!empty($prepytanie)){
     echo '<div class="prepyt">';
         echo $prepytanie;
@@ -75,30 +118,16 @@ echo '<div class="pytanieMain">';
     echo '<div class="pytanie">';
         echo $pytanie['pytanie'];
     echo '</div>';
-    echo '<div class="odpowiedzi">';
+    echo '<div class="odpowiedzi" onclick="checkAns()">';
         echo '<label class="ans1"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="1">'.$odp1.'</label><br>';
         echo '<label class="ans2"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="2">'.$odp2.'</label><br>';
         echo '<label class="ans3"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="3">'.$odp3.'</label><br>';
         echo '<label class="ans4"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="4">'.$odp4.'</label><br>';
     echo '</div>';
-    echo '</div>';
-echo '</div>';
+   // echo '</div>';
+//echo '</div>';
         ?>
-    </div>
     <empty class="data" data-answer="<?php echo $pytanie['poprawna'] ?>"></empty>
-    <script>
-    const labels = document.querySelectorAll(`label`);
-    const answer = document.querySelector(`empty.data`).dataset.answer;
-    const correct = document.querySelector(`label.ans`+answer);
-        
-    labels.forEach(addEventListener(`click`, e => {
-        if(e == correct){
-            e.classList.add(`correct`);
-        } else {
-            e.classList.add(`wrong`);
-            correct.classList.add(`correct`);
-        }
-    }))
-    </script>
+    </div>
 </body>
 </html>
