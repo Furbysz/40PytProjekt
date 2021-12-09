@@ -42,28 +42,6 @@ $pytanie = $all_pyt[rand(0, $number_of_questions-1)];
     <link rel="stylesheet" href="css/Correcty'n'Wrong.css">
 </head>
 <body>
-<script>
-    const labels = document.querySelectorAll(`label`);
-    const answer = document.querySelector(`empty.data`).dataset.answer;
-    const correct = document.querySelector(`label.ans`+answer);
-        
-    function checkAns()
-        {
-            const selected = document.querySelector(`input.answerRadio:checked`).value;
-            if(selected != 1 OR selected != 2 OR selected != 3 OR selected != 4){return 0;}
-            console.log(selected);
-        }
-    /*  
-    labels.forEach(addEventListener(`click`, e => {
-        if(e == correct){
-            e.classList.add(`correct`);
-        } else {
-            e.classList.add(`wrong`);
-            correct.classList.add(`correct`);
-        }
-    }))
-    */
-</script>
 <div class="pytanieMain">
 <?php
     $wczytano = 0;
@@ -109,25 +87,48 @@ $pytanie = $all_pyt[rand(0, $number_of_questions-1)];
         $odp4 = '<pre>'.htmlentities($pytanie['odp4']).'</pre>';
     }
     //#########
-    echo '<div class="data" hidden></div>';
+    echo '<div class="data" hidden></div>
+    ';
     if(!empty($prepytanie)){
     echo '<div class="prepyt">';
         echo $prepytanie;
     echo '</div>';
     }
-    echo '<div class="pytanie">';
+    echo '<div class="pytanie">
+    ';
         echo $pytanie['pytanie'];
-    echo '</div>';
-    echo '<div class="odpowiedzi" onclick="checkAns()">';
-        echo '<label class="ans1"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="1">'.$odp1.'</label><br>';
-        echo '<label class="ans2"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="2">'.$odp2.'</label><br>';
-        echo '<label class="ans3"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="3">'.$odp3.'</label><br>';
-        echo '<label class="ans4"><input class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="4">'.$odp4.'</label><br>';
-    echo '</div>';
-   // echo '</div>';
-//echo '</div>';
+    echo '</div>
+    ';
+    echo '<div class="odpowiedzi">
+        ';
+        echo '<label class="ans1"><input onclick="checkAns(1)" class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="1">'.$odp1.'</label><br>
+        ';
+        echo '<label class="ans2"><input onclick="checkAns(2)" class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="2">'.$odp2.'</label><br>
+        ';
+        echo '<label class="ans3"><input onclick="checkAns(3)" class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="3">'.$odp3.'</label><br>
+        ';
+        echo '<label class="ans4"><input onclick="checkAns(4)" class="answerRadio" type="radio" name="Q_'.$pytanie['id'].'" value="4">'.$odp4.'</label><br>
+    ';
+    echo '</div>
+    ';
         ?>
     <empty class="data" data-answer="<?php echo $pytanie['poprawna'] ?>"></empty>
     </div>
+    <script>
+    const labels = document.querySelectorAll(`label`);
+    const answer = document.querySelector(`empty.data`).dataset.answer;
+    const correct = document.querySelector(`label.ans`+answer);
+        
+    function checkAns(number)
+        {
+            var selected = number //document.querySelector(`input.answerRadio:checked`).value;
+            if(selected != 1 || selected != 2 || selected != 3 || selected != 4){return 0;}
+            console.log(selected);
+            labels.forEach(e=>{
+                var input = e.querySelector(`input.answerRadio`);
+                input.element.setAttribute(`disabled`);
+            })
+        }
+</script>
 </body>
 </html>
