@@ -1,5 +1,4 @@
 <?php
-if(!isset($_POST['ile_pytan'])){echo 'nie wiem ile było pytań';}
 //if(!isset($_POST['ile_pytan'])){echo 'nie wiem ile było pytań';}
 
 include('dbc.php');
