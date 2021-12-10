@@ -21,6 +21,5 @@ switch($_POST['destination'])
         break;
         
 }
-//echo $link;
 header('Location: '.$link);
 ?>

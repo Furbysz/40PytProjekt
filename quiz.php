@@ -4,7 +4,7 @@ if(!isset($_GET['type'])){
     header('Location: '.$actual_link);
 }
 
-$ile_pytan_wariacie = 5;
+$ile_pytan_wariacie = 40;
     
 switch($_GET['type']){
     case 'e12':

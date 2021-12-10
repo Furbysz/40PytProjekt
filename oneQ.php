@@ -4,7 +4,8 @@ if(!isset($_GET['type'])){
     header('Location: '.$actual_link);
 }
 
-switch($_GET['type']){
+switch($_GET['type'])
+{
     case 'e12':
         $query = 'SELECT * FROM e12';
         break;
@@ -121,14 +122,20 @@ $pytanie = $all_pyt[rand(0, $number_of_questions-1)];
         
     function checkAns(number)
         {
-            var selected = number //document.querySelector(`input.answerRadio:checked`).value;
-            if(selected != 1 || selected != 2 || selected != 3 || selected != 4){return 0;}
-            console.log(selected);
+            var selected = number;
+            if(selected != 1 && selected != 2 && selected != 3 && selected != 4){return 0;}
             labels.forEach(e=>{
                 var input = e.querySelector(`input.answerRadio`);
-                input.element.setAttribute(`disabled`);
+                input.disabled = true;
             })
+            if(answer != number){
+                document.querySelector(`label.ans`+number).classList.add(`wrong`)
+                document.querySelector(`label.ans`+answer).classList.add(`correct`)
+            } else {
+                document.querySelector(`label.ans`+number).classList.add(`correct`)
+            }
         }
 </script>
+<button onClick="window.location.reload();">Dawaj kolejne pytanieeee!</button>
 </body>
 </html>

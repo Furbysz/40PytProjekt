@@ -127,10 +127,10 @@ for($j = 0; $j < $ile_pyt; $j++)
         echo 'poprawnie udzielone odpowiedzi : ';
         echo $poprawnieUdzieloneOdp.'/'.$ile_pyt;
         echo ' -> ';
-        echo ' <br><b '.$klasaProc.'> '.$procent.'%</b>'    
+        echo ' <br><b class="'.$klasaProc.'"> '.$procent.'%</b>'    
 ?>
 </div>
-<br>
+<br><br>
 <a href="../index.html">Powrót do strony głównej</a>
 </body>
 </html>
