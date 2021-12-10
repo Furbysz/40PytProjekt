@@ -1,5 +1,6 @@
 <?php
 if(!isset($_POST['ile_pytan'])){echo 'nie wiem ile było pytań';}
+//if(!isset($_POST['ile_pytan'])){echo 'nie wiem ile było pytań';}
 
 include('dbc.php');
 /*
@@ -31,6 +32,7 @@ for($j = 0; $j < $ile_pyt; $j++)
 {
     if(isset($_POST['Q_'.$j])){$odpowiedz = $_POST['Q_'.$j];}else{$odpowiedz = null;}
     $id_pyt     = $_POST['id_pyt_'.$j];
+    $dane   = $all_pyt[$id_pyt-1];
     //#############
     $query = 'SELECT * FROM '.$kwali.' WHERE id='.$id_pyt.';';
     $response = mysqli_query($dbc, $query);
